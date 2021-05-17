@@ -1,1 +1,1 @@
-# Modelling-patient-ventilator-asynchrony
+# Modelling-Patient-Ventilator-Asynchrony
