@@ -2,8 +2,8 @@
 As healthcare development increasingly depends on clinical decision support systems (CDSS) to digitize high volume of breathing waveform data from ventilators, more and more advanced techniques have been applied in optimizing anomaly detection in the early stage of the respiratory diseases for patients in the intensive care unit (ICU). It would be no exaggeration to say that CDSS are widely applied in the area of ventilators for detecting patient-ventilator asynchrony (PVA). PVA is defined as a mismatch between inspiratory as well as expiratory processes of patients and ventilators regarding flow and pressure supply.
 
 ## Table of Contents
-1. [Waveform_data](###Waveform_data)
-2. [Methodologies](###Methodologies)
+1. [Waveform_data](#Waveform_data)
+2. [Methodologies](#Methodologies)
 
 ### Waveform_data
 Ventilators display streaming waveform data to show health conditions of a patient. Ventilator waveforms describe a visual human machine interaction between the patient and the ventilator about breathing information. It is the most direct and common way to detect asynchronous data that are used by clinicians to diagnose and treat patients in real time. A normal waveform data mainly contains flow and pressure versus time scalars in Fig 1:
