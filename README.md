@@ -4,6 +4,7 @@ As healthcare development increasingly depends on clinical decision support syst
 ## Table of Contents
 1. [Waveform_data](#Waveform_data)
 2. [Methodologies](#Methodologies)
+3. [Implementation](#Implementation)
 
 ### Waveform_data
 Ventilators display streaming waveform data to show health conditions of a patient. Ventilator waveforms describe a visual human machine interaction between the patient and the ventilator about breathing information. It is the most direct and common way to detect asynchronous data that are used by clinicians to diagnose and treat patients in real time. A normal waveform data mainly contains flow and pressure versus time scalars in Fig 1:
@@ -42,3 +43,5 @@ In BSA, it is more difficult to identify anomalies due to the inclusiveness of D
 
 ### Methodologies
 The proposed system is designed to have two components including a 1D CNN time-series forecasting model and a one-class SVM anomaly detection model. The 1D CNN is used for predicting next step breathing observation based on previous one. The predicted data and the actual data are then fed into the one-class SVM, which acts as an anomaly detector for detecting PVA in the out of sample dataset that lies out of the boundary it creates. At the same time, it has the ability of real-time monitoring, locating when the PVA happened within a breath against time sequences.
+
+### Implementation
