@@ -42,15 +42,3 @@ In BSA, it is more difficult to identify anomalies due to the inclusiveness of D
 
 ### Methodologies
 The proposed system is designed to have two components including a 1D CNN time-series forecasting model and a one-class SVM anomaly detection model. The 1D CNN is used for predicting next step breathing observation based on previous one. The predicted data and the actual data are then fed into the one-class SVM, which acts as an anomaly detector for detecting PVA in the out of sample dataset that lies out of the boundary it creates. At the same time, it has the ability of real-time monitoring, locating when the PVA happened within a breath against time sequences.
-
-#### Timeseries forcasting
-The forecasting task in our study is a one-step ahead prediction of flow and pressure against time series by using delay embedding technique which decides dimensionality (lookback), delay and step parameters. In particular, step refers to the number of observations within one period and delay is how many timesteps the predicted target will be in the future. Dimensionality (lookback) means the number of timesteps back the input data should go and also can be calculated by multiplication of step and delay vectors. With all delay embedding vectors set, the system state would be reconstructed to that of the original state before continuation of the system implementation.
-
-#### 1D CNN
-1D CNN extracts 1D patches at a time from the temporal sequence, making it faster to process the forward and backward propagation at a cost that requires less computation. So 1D CNN would make convolution networks excel at time series forecasting because time can be treated as a spatial dimension, superseding the height and width in 2D CNN.
-
-#### One-class SVM
-
-The one-class SVM acts as an anomaly detector for detecting asynchronous breathing data. The main difference between it and the standard SVM is that it is fitted in an unsupervised way and uses a nu parameter instead of l1 penalty for hyperparameters tuning. The nu is the proportion of outliers within the normal data while the gamma parameter decides the smoothness of the boundary.
-
-Additionally, in order to detect the specific location of the anomaly within a breath, the selection of the kernel function is the key issue that affects the classification performance significantly. Among all basic kernels, radio basis function (RBF) is frequently used and could succeed in our anomaly detection. For one thing, the RBF kernel function contains only one parameter, which can greatly reduce the workload of parameter optimization. For another, RBF is capable of mapping the linear inseparable problem in the original space to the high-dimensional space, so as to solve it in the original space.
