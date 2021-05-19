@@ -29,8 +29,14 @@ In our study, breath metadata come from 5 distinctive patients who received cons
 | E-time | seconds | Expiratory time |
 | I:E ratio	| N/A	| Ratio of I-time/E-time |
 
-
 Raw ventilator data needs to be formatted in an expected way so that our software is able to understand and read it. With the help of a python library called ventmap, an open-source multi-purpose ventilator analytic was developed for processing ventilator waveform data, raw breath metadata can be turned into a 2-column waveform PB-840 (Puritan Bennett 840, Covidien, U.S.) format.
+
+There are two principal types of PVA considering the prevalence of occurrence in clinical experience presented in Fig 2(a): double triggering asynchrony (DTA) and Fig 2(b): breath stacking asynchrony (BSA). Both of them have the same characteristics of incomplete process of exhalation, a phenomenon called dynamic hyperinflation due to inadequate expiration time that would have a detrimental impact on the lungs.
+
+![Fig 2(a)](download2.png)
+![Fig 2(b)](download3.png)
+
+In DTA, the inspiratory effort lingers beyond that produced by the ventilator. It will subsequently trigger next breath without the intervention of exhalation, resulting in dynamic hyperinflation and potential lung damage. For BSA, the expiratory time is again too short to finish an exhalation. A wider range of conditions are adopted to detect BSA due to the inclusiveness of DTA.
 
 ### Methodologies
 The proposed system is designed to have two components including a 1D CNN time-series forecasting model and a one-class SVM anomaly detection model. The 1D CNN is used for predicting next step breathing observation based on previous one. The predicted data and the actual data are then fed into the one-class SVM, which acts as an anomaly detector for detecting PVA in the out of sample dataset that lies out of the boundary it creates. At the same time, it has the ability of real-time monitoring, locating when the PVA happened within a breath against time sequences.
