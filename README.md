@@ -45,6 +45,6 @@ In BSA, it is more difficult to identify anomalies due to the inclusiveness of D
 The proposed system is designed to have two components including a 1D CNN time-series forecasting model and a one-class SVM anomaly detection model. The 1D CNN is used for predicting next step breathing observation based on previous one. The predicted data and the actual data are then fed into the one-class SVM, which acts as an anomaly detector for detecting PVA in the out of sample dataset that lies out of the boundary it creates. At the same time, it has the ability of real-time monitoring, locating when the PVA happened within a breath against time sequences.
 
 ### Implementation
-The specific implementation is shown as follows:
+The specific implementation is shown in:
 
 [main.ipynb](main.ipynb)
